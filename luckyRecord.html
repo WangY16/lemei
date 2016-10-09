@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no" />
+		<meta content="email=no" name="format-detection" />
+		<meta name="apple-itunes-app" content="app-id=myAppStoreID, affiliate-data=myAffiliateData, app-argument=myURL" />
+		<meta name="screen-orientation" content="portrait">
+		<link rel="stylesheet" href="css/reset.css" type="text/css"/>
+		<title>乐美大咖-中奖纪录</title>
+		<style>
+			body{
+				background-color: #F2F2F2;
+				font-size: 12px;
+			}
+			.content-head{
+				width: 100%;
+				background-color: white;
+			}
+			.content-body{
+				width:100%;
+				background-color: #F2F2F2;
+			}
+			.tab-list {
+				display:-webkit-box;
+			    display: -moz-box;
+			    display: -ms-flexbox;
+			    display: -webkit-flex;
+			    display: flex;
+			}
+			.tab-list li{
+				box-flex:3;
+				-webkit-box-flex:3;
+				-moz-box-flex:3;
+				flex:3;
+				-webkit-flex:3;
+				height:40px;
+				line-height: 40px;
+				text-align: center;
+				border-bottom: 2px solid white;
+			}
+			.tab-list li.li-selected {
+				border-bottom: 2px solid #3399cc;
+				color: #3399cc;
+			}
+			.lucky-list {
+				width:92%;
+				border-radius: 10px;
+				margin: 6px auto;
+				margin-top: 10px;
+				background-color: white;
+			}
+			.lucky-list-zhong{
+				/*content: url(img/zhongjiang.png);
+			    display: block;
+			    margin-top: -8px;
+			    margin-right: 9px;
+			    float: right;*/
+			    /*position: absolute;
+			    right: 0;*/
+			   background-image:url(img/zhongjiang.png);
+			   background-position: right top;
+			   background-size: 20%;
+			   background-repeat: no-repeat; 
+			}
+			.lucky-list-left,.lucky-list-right {
+				display:inline-block;
+			}
+			.lucky-list-left {
+				width:33%;
+			}
+			.lucky-list-right {
+				width:66%;
+				color:#909090;
+				padding-left: 10px;
+			}
+			.lucky-list-left img {
+				width:108px;
+				vertical-align: super;
+			}
+			.list-right-title,.list-right-content {
+				height:30px;
+				line-height: 30px;
+			}
+			.list-right-title {
+				color: #3998CB;
+			}
+			.list-right-title .fr{
+				color:#FF9600;
+				font-size: 18px;
+			}
+			.list-right-btn {
+				width:100%;
+				height:40px;
+				margin-top: 10px;
+			} 
+			.pl20 {
+				padding-left: 20px;
+			}
+			.ui-button {
+				float:right;
+				display: inline-block;
+				margin-right: 20px;
+				padding: 6px 30px;
+				color: white;
+				border-radius: 6px;
+			}
+			.f-zhui {
+				background-color: #4EB9E5;
+			}
+			.f-dui {
+				background-color: #ff9900;
+			}
+			.f-again {
+				background-color:#4EB9E5;
+			}
+			.fc {
+				color:#FF9600;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="content-head">
+			<ul class="tab-list">
+				<li class="li-selected">全部</li>
+				<li>进行中（1）</li>
+				<li>已揭晓</li>
+			</ul>
+		</div>
+	
+		<div class="content-body">
+			
+			<div class="lucky-list ">
+				<div class="lucky-list-left">
+					<img src="img/lm-daijin.png"/>
+				</div>
+				<div class="lucky-list-right">
+					<div class="list-right-title">
+						<p><span class="fr">800</span>元场地代金券</p>
+					</div>
+					<div class="list-right-content">
+						<label>期号：</label><span>12345</span>
+					</div>	
+					<div class="list-right-content">
+							<label>总需：</label><span>22人次</span>
+							<label class="pl20">剩余：</label><span>12人次</span>
+					</div>
+					<div class="list-right-btn">
+						<a class="ui-button f-zhui">追加</a>
+					</div>
+				</div>
+			</div>
+			
+			<div class="lucky-list lucky-list-zhong ">
+				<div class="lucky-list-left">
+					<img src="img/lm-daijin.png"/>
+				</div>
+				<div class="lucky-list-right">
+					<div class="list-right-title">
+						<p><span class="fr">800</span>元场地代金券</p>
+					</div>
+					<div class="list-right-content">
+						<label>期号：</label><span>12345</span>
+					</div>	
+					<div class="list-right-content">
+							<label>总需：</label><span>22人次</span>
+							<label class="pl20">剩余：</label><span>12人次</span>
+					</div>
+					<div class="list-right-content">
+						<label>兑奖者：</label><span class="fc">复仇者联盟</span>
+					</div>	
+					<div class="list-right-content">
+						<label>幸运号码：</label><span>12345454</span>
+					</div>	
+					<div class="list-right-content">
+						<label>揭晓时间：</label><span>2016-10-01 23:00:00</span>
+					</div>	
+					<div class="list-right-btn">
+						<a class="ui-button f-dui">兑奖</a>
+					</div>
+				</div>
+			</div>
+			
+			<div class="lucky-list ">
+				<div class="lucky-list-left">
+					<img src="img/lm-daijin.png"/>
+				</div>
+				<div class="lucky-list-right">
+					<div class="list-right-title">
+						<p><span class="fr">800</span>元场地代金券</p>
+					</div>
+					<div class="list-right-content">
+						<label>期号：</label><span>12345</span>
+					</div>	
+					<div class="list-right-content">
+							<label>总需：</label><span>22人次</span>
+							<label class="pl20">剩余：</label><span>12人次</span>
+					</div>
+					<div class="list-right-content">
+						<label>兑奖者：</label><span class="fc">复仇者联盟</span>
+					</div>	
+					<div class="list-right-content">
+						<label>幸运号码：</label><span>12345454</span>
+					</div>	
+					<div class="list-right-content">
+						<label>揭晓时间：</label><span>2016-10-01 23:00:00</span>
+					</div>	
+					<div class="list-right-btn">
+						<a class="ui-button f-again">继续</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+
+		<script type="text/javascript" src="js/jquery.min.js" ></script>
+		<script type="text/javascript" src="js/tab.js"></script>
+	</body>
+</html>

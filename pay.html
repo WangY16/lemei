@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no" />
+		<meta content="email=no" name="format-detection" />
+		<meta name="apple-itunes-app" content="app-id=myAppStoreID, affiliate-data=myAffiliateData, app-argument=myURL" />
+		<meta name="screen-orientation" content="portrait">
+		<link rel="stylesheet" href="css/reset.css" type="text/css"/>
+		<title>乐美大咖-支付</title>
+		<style>
+			body {
+				background-color: #F2F2F2;
+				font-size: 12px;
+			}
+			.fc{
+				color:#FF6600;
+			}
+			.goods-btn {
+				width:100%;
+				position: fixed;
+				bottom: 0;
+			}
+			.goods-btn-detail {
+				padding-left: 16px;
+				height:36px;
+				line-height: 36px;
+				background-color: white;
+				font-size: 12px;
+			}
+			.goods-btn-ok {
+				height: 58px;
+				line-height: 58px;
+				background-color: #4db9e4;
+				color:white;
+				text-align: center;
+				font-size: 14px;
+			}
+			.goods-list{
+				width:100%;
+				font-size: 12px;
+				background-color: white;
+				text-align: center;
+			}
+			.goods-list-car {
+				margin-bottom: 10px;
+				/*border:1px solid #DDDDDD;*/
+				background-color: white;
+			}
+			.goods-title img {
+				width:90px;
+				margin: 25px;
+			}
+			.fw {
+				font-size: 12px;
+				font-weight: bold;
+			}
+			.person-surplus {
+				padding-left: 25px;
+			}
+			.joined-detail,.joined-num {
+				height:40px;
+				line-height: 40px;
+				font-size: 18px;
+				color:#FF6600;
+			}
+			.joined-num-title,.joined-num-select {
+				float:left;
+				display: inline-block;
+			}
+			.joined-num-title {
+				width:100px;
+			}
+			.joined-num-select {
+				height:40px;
+			}
+			.joined-num-select span,.joined-num-select input {
+				display: inline-block;
+				float: left;
+			}
+			.joined-num-select span{
+				width:30px;
+				height:30px;
+				margin-top:4px ;
+				border: 1px solid #DDDDDD;
+				text-align: center;;
+				line-height: 28px;
+				font-size: 14px;
+			}
+			
+			.joined-num-select input {
+				width:60px;
+				height:30px;
+				margin-top:4px;
+				border-top: 1px solid #DDDDDD;
+				border-bottom: 1px solid #DDDDDD;
+				border-left: none;
+				border-right: none;
+				text-align: center;
+				outline: none;
+			}
+			.joined-countdown {
+				color:#666666;
+				padding-bottom: 25px;
+			}
+			.pay-type {
+				width:100%;
+				background: white;
+				margin-top: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="goods-list">
+			<div class="goods-title">
+				<img src="img/lm-daijin.png" />
+			</div>
+			<div class="joined-detail">
+				800元场地代金券
+			</div>
+			<div class="joined-countdown">
+				(请在<span id="firstDate" class="fc fw">12</span>分<span id="secondDate" class="fc fw">8</span>秒内完成支付)
+			</div>
+		</div>
+		<div class="pay-type">
+			<div >
+				支付方式<span>110元</span>
+			</div>
+			<div>
+				微信支付 <input type="radio" />
+			</div>
+		</div>
+		<div class="goods-btn">
+			<div class="goods-btn-ok">
+				确认支付
+			</div>
+		</div>
+		<script type="text/javascript" src="js/jquery.min.js" ></script>
+		<script type="text/javascript">
+			var speed = 8;   //秒
+			var minutes = 21;  //分钟
+			var time = null;
+			time = setInterval(countDown, 1000);
+			
+			function countDown() {
+				speed--;
+				if (speed < 0) {
+					minutes--;
+					if (minutes < 0) {
+						clearInterval(time);
+					} else {
+						speed = 59;
+						$("#secondDate").text(speed);
+						$("#firstDate").text(minutes);
+					}
+				} else {
+					$("#secondDate").text(speed);
+				}
+			}
+		</script>
+	</body>
+</html>

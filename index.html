@@ -2,8 +2,317 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no" />
+		<meta content="email=no" name="format-detection" />
+		<meta name="apple-itunes-app" content="app-id=myAppStoreID, affiliate-data=myAffiliateData, app-argument=myURL" />
+		<meta name="screen-orientation" content="portrait">
+		<link rel="stylesheet" href="css/reset.css" type="text/css"/>
+		<link rel="stylesheet" href="css/styles.css" />
+	<!--	<link rel="stylesheet" href="css/idangerous.swiper.css" />
+		<link rel="stylesheet" href="css/gallery-app.css" />-->
+		<title>乐美大咖-首页</title>
+		<style>
+			.index-head,.index-body{
+				width:100%;
+				margin: 0 auto;
+			}
+			.index-head img{
+				width:100%;
+				background-image: url();
+			}
+			
+			.index-head-search {
+				position: absolute;
+				top: 10px;
+				width: 100%;
+				margin: 0 auto;
+				text-align:center;
+			}
+			.index-head-search  input {
+				border-radius: 15px;
+			    border: 1px solid #cccccc;
+			    padding: 4px 30px 4px 10px;
+			    height: 30px;
+			    width: 96%;
+			    filter:alpha(opacity=70); /*IE滤镜，透明度70%*/
+				-moz-opacity:0.7; /*Firefox私有，透明度70%*/
+				opacity:0.7;
+			}
+			.index-body {
+				overflow: hidden;
+			}
+			.index-body .index-body-introduce{
+				margin-top: 30px;
+				text-align: center;
+				font-size: 14px;
+				color: #3399cc;
+			}
+			.touch-slider {
+				overflow: hidden;
+			}
+			.touch-slider .slider-pro-list {
+				float: left;
+				display: inline-block;
+				width:60%;
+				margin: 20px auto;
+				border: 1px solid #EFEFEF;
+			}
+			.slider-pro-list-unshow {
+				transform: scale(0.8);
+				opacity: 0.7;
+				position: relative;
+			}
+			.slider-pro-list-leftunshow{
+    			left: -41%;
+			}
+			/*.slider-pro-list-rightunshow{
+				position: relative;
+    			left: -41%;
+			}*/
+			.slider-pro-head {
+				width: 100%;
+			    height: 180px;
+			   /* background-image: url(img/lm-daijin.png);
+			    background-size: 70%;
+			    background-repeat: no-repeat;
+			    background-position-x: 50%;
+			    background-position-y: 100%;*/
+			}
+			.slider-pro-head .detail-img {
+				float: right;
+			} 
+			.pro-img {
+				text-align: center;
+			}
+			.pro-img  img {
+				width: 110px;
+			}
+			.slider-pro-body {
+				width: 100%;
+			    height: 132px;
+			    background-color: #4EBAE4;
+			    color:white;
+			}
+			.slider-pro-detail {
+				display: inline-block;
+				float: left;
+				width:50%;
+			}
+			.slider-pro-detail label {
+				margin-left: 10px;
+				margin-bottom: 10px;
+				width: 48px;
+			}
+			.slider-pro-awardee {
+				position: relative;
+				top: -16px;
+				width: 50%;
+				margin: 0 auto;
+			    padding: 4px 6px;
+			    border: 1px solid #4EBAE4;
+			    border-radius: 20px;
+			    color: #4EBAE4;
+			    background: white;
+			    text-align: center;
+			}
+			.slider-pro-body p {
+				margin-top: -12px;
+				text-align: center;
+			}
+			.slider-pro-money {
+				font-size: 30px;
+			}
+			.progress-bar {
+				width:70%;
+				height:10px;
+				margin: 10px auto;
+				border: 1px solid white;
+				border-radius: 10px;
+				background-color: white;
+			}
+			.join-progress {
+				position: relative;
+				display: inline-block;
+				width:100%;
+				height:10px;
+				border: 1px solid #ff9900;
+				background-color: #ff9900;
+				border-radius: 10px;
+			}
+			/*.slider-right,.slider-left {
+				width:20%;
+				height:314px;
+				margin: 20px auto;
+				background-color: #000000;
+				float:left;
+				display: inline-block;
+			}*/
+			.icon {
+				color: #A4D8F2;
+				overflow: hidden;
+				-webkit-border-radius: 3px;
+				border-radius: 3px;
+				font-size: 42px;
+				padding-top: 10px;
+    			padding-left: 12px;
+    			
+			}
+			.fixed-person {
+				position: fixed;
+				width:70px;
+				height: 70px;
+				left: 10px;
+				background-color: white;
+				border-radius: 70px;
+				border: 1px solid #3399CC;
+				box-shadow:4px 4px 20px #A4D8F2;
+			}
+		</style>
 	</head>
 	<body>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<div class="index-head">
+			<img src="img/lemei.jpg">
+			<div class="index-head-search">
+				<input type="text" placeholder="乐美大咖秀" autocomplete="on" />
+			</div>
+		</div>
+		<div class="index-body">
+			<p class="index-body-introduce"><-左右滑动选择代金券-></p>
+			<div class="touch-slider" id="slider">
+				
+				<!--
+                	作者：759804722@qq.com
+                	时间：2016-10-04
+                	描述：每个产品模块
+                -->
+				
+							
+						<!--<div class="slider-left">
+							
+						</div>-->
+						<!--<div class="slider-pro-list slider-pro-list-unshow slider-pro-list-leftunshow">
+							<div class="slider-pro-head">
+								<div class="clearfix">
+									<img class="detail-img" src="img/lm-add.png" />
+								</div>	
+								<div class="pro-img">
+									<img class="pro-img" src="img/lm-daijin.png"/>
+								</div>	
+							</div>
+							<div class="slider-pro-body">
+								<div class="slider-pro-awardee">
+									大咖：小李子
+								</div>
+								<p><span class="slider-pro-money">￥800</span>场地代金券</p>
+								<div class="clearfix">
+									<div class="slider-pro-detail">
+										<div><label>区域：</label><span>杭州</span></div>
+										<div><label>总需：</label><span>22人</span></div>
+									</div>
+									<div class="slider-pro-detail">
+										<div><label>场地：</label><span>大新洞都</span></div>
+										<div><label>已开奖：</label><span>200场</span></div>	
+									</div>
+								</div>	
+								<div class="progress-bar">
+									<div class="join-progress clearfix"></div>
+								</div >
+							</div>
+						</div>-->
+						
+						
+						
+						
+						<div class="slider-pro-list">
+							<div class="slider-pro-head">
+								<div class="clearfix">
+									<img class="detail-img" src="img/lm-add.png" />
+								</div>	
+								<div class="pro-img">
+									<img class="pro-img" src="img/lm-daijin.png"/>
+								</div>	
+							</div>
+							<div class="slider-pro-body">
+								<div class="slider-pro-awardee">
+									大咖：小李子
+								</div>
+								<p><span class="slider-pro-money">￥800</span>场地代金券</p>
+								<div class="clearfix">
+									<div class="slider-pro-detail">
+										<div><label>区域：</label><span>杭州</span></div>
+										<div><label>总需：</label><span>22人</span></div>
+									</div>
+									<div class="slider-pro-detail">
+										<div><label>场地：</label><span>大新洞都</span></div>
+										<div><label>已开奖：</label><span>200场</span></div>	
+									</div>
+								</div>	
+								<div class="progress-bar">
+									<div class="join-progress clearfix"></div>
+								</div >
+								</div>
+							</div>
+						
+						<!--<div class="slider-right">
+							
+						</div>-->
+						<!--<div class="slider-pro-list">
+							<div class="slider-pro-head">
+								<div class="clearfix">
+									<img class="detail-img" src="img/lm-add.png" />
+								</div>	
+								<div class="pro-img">
+									<img class="pro-img" src="img/lm-daijin.png"/>
+								</div>	
+							</div>
+							<div class="slider-pro-body">
+								<div class="slider-pro-awardee">
+									大咖：小李子
+								</div>
+								<p><span class="slider-pro-money">￥800</span>场地代金券</p>
+								<div class="clearfix">
+									<div class="slider-pro-detail">
+										<div><label>区域：</label><span>杭州</span></div>
+										<div><label>总需：</label><span>22人</span></div>
+									</div>
+									<div class="slider-pro-detail">
+										<div><label>场地：</label><span>大新洞都</span></div>
+										<div><label>已开奖：</label><span>200场</span></div>	
+									</div>
+								</div>	
+								<div class="progress-bar">
+									<div class="join-progress clearfix"></div>
+								</div >
+								</div>
+							</div>-->
+						
+						
+							
+			</div>
+		</div>
+		<div class="fixed-person">
+			<div class="icon" data-icon="&#xe00e;"></dvi>
+		</div>
+		<script type="text/javascript" src="js/jquery.min.js" ></script>
+<!--		<script type="text/javascript" src="js/idangerous.swiper.js" ></script>
+		<script type="text/javascript" src="js/gallery-app.js" ></script>-->
+		<script type="text/javascript">
+			/**
+			 * 跳转到个人首页
+			 */
+			$(".fixed-person").off("click").on("click",function(){
+				window.location.href="persionIndex.html";
+			})
+			/**
+			 * 产品详情
+			 */
+			$(".slider-pro-list").off("click").on("click",function(){
+				window.location.href="product.html";
+			})
+		</script>
 	</body>
 </html>

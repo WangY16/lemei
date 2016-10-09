@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no" />
+		<meta content="email=no" name="format-detection" />
+		<meta name="apple-itunes-app" content="app-id=myAppStoreID, affiliate-data=myAffiliateData, app-argument=myURL" />
+		<meta name="screen-orientation" content="portrait">
+		<link rel="stylesheet" href="css/reset.css" type="text/css"/>
+		<title>产品列表</title>
+		<style>
+			body {
+				background-color: #F2F2F2;
+				font-size: 12px;
+			}
+			.fc{
+				color:#FF6600;
+				font-weight: bold;
+			}
+			.goods-btn {
+				width:100%;
+				position: fixed;
+				bottom: 0;
+			}
+			.goods-btn-detail {
+				padding-left: 16px;
+				height:36px;
+				line-height: 36px;
+				background-color: white;
+				font-size: 12px;
+			}
+			.goods-btn-ok {
+				height: 58px;
+				line-height: 58px;
+				background-color: #4db9e4;
+				color:white;
+				text-align: center;
+				font-size: 14px;
+			}
+			.goods-list{
+				width:100%;
+				min-height: 170px;
+				overflow-y:scroll ;
+				font-size: 12px;
+			}
+			.goods-list-car {
+				margin-bottom: 10px;
+				/*border:1px solid #DDDDDD;*/
+				background-color: white;
+			}
+			.goods-title {
+				border-bottom: 1px solid #DDDDDD;
+			}
+			.goods-title img {
+				width:74px;
+				margin: 10px;
+			}
+			.fw {
+				font-size: 16px;
+				font-weight: bold;
+			}
+			.person-surplus {
+				padding-left: 25px;
+			}
+			.joined-detail,.joined-num {
+				height:40px;
+				line-height: 40px;
+				padding-left: 15px;
+				border-bottom:1px solid #DDDDDD;
+			}
+			.joined-num-title,.joined-num-select {
+				float:left;
+				display: inline-block;
+			}
+			.joined-num-title {
+				width:100px;
+			}
+			.joined-num-select {
+				height:40px;
+			}
+			.joined-num-select span,.joined-num-select input {
+				display: inline-block;
+				float: left;
+			}
+			.joined-num-select span{
+				width:30px;
+				height:30px;
+				margin-top:4px ;
+				border: 1px solid #DDDDDD;
+				text-align: center;;
+				line-height: 28px;
+				font-size: 14px;
+			}
+			
+			.joined-num-select input {
+				width:60px;
+				height:30px;
+				margin-top:4px;
+				border-top: 1px solid #DDDDDD;
+				border-bottom: 1px solid #DDDDDD;
+				border-left: none;
+				border-right: none;
+				text-align: center;
+				outline: none;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div class="goods-list">
+			
+			<div class="goods-list-car">
+				<div class="goods-title">
+					<img src="img/lm-daijin.png" />
+					<span class="fc fw">800</span>元场地代金券
+				</div>
+				<div class="joined-detail">
+					总需：80人次<span class="person-surplus">剩余12人次</span>
+				</div>
+				<div class="joined-num">
+					<div class="joined-num-title">参与人次：</div>
+					<div class="joined-num-select">
+						<span>-</span>
+						<input type="number" min="2" max="12" value="1" class="num-select-input" />
+						<span>+</span>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		<div class="goods-btn">
+			<div class="goods-btn-detail">
+				共参与<span class="fc">1</span>件商品，共计<span class="fc">80元</span>
+			</div>
+			<div class="goods-btn-ok">
+				确认
+			</div>
+		</div>
+		
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/numSelect.js"></script>
+		<script>
+			$(".num-select-input").each(function(){
+				$(this).numberSelect({
+					"readOnly" : false
+				});
+			})
+		</script>
+	</body>
+</html>

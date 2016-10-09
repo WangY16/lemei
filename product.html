@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no" />
+		<meta content="email=no" name="format-detection" />
+		<meta name="apple-itunes-app" content="app-id=myAppStoreID, affiliate-data=myAffiliateData, app-argument=myURL" />
+		<meta name="screen-orientation" content="portrait">
+		<link rel="stylesheet" href="css/reset.css" type="text/css"/>
+		<style>
+			.pro-head,.pro-body,.pro-button{
+				width:100%;
+			}
+			.pro-head,.pro-body {
+				border: 1px solid #F3F3F3;
+			}
+			.pro-img {
+				text-align: center;
+			}
+			.pro-img  img {
+				width: 110px;
+			}
+			.image-title {
+				font-size: 15px;
+				font-weight: bold;
+				margin-bottom: 20px;
+				color:#33333;
+			}
+			.slider-pro-detail {
+				display: inline-block;
+				float: left;
+				width:50%;
+				font-size: 12px;
+				color: #666666;
+			}
+			.slider-pro-detail label {
+				text-align: right;
+				margin-left: 25px;
+				margin-bottom: 10px;
+				width: 48px;
+			}
+			.pro-speed {
+				margin-top: 10px;
+				padding-left: 25px;
+				font-size: 12px;
+				color:#ff9900;
+			}
+			.progress-bar {
+				width:88%;
+				height:10px;
+				margin: 10px auto;
+				border: 1px solid #DDDDDD;
+				border-radius: 10px;
+				background-color: #DDDDDD;
+				margin-left: 25px;
+			}
+			.join-progress {
+				position: relative;
+				top: -1px;
+				display: inline-block;
+				width:90%;
+				height:10px;
+				border: 1px solid #ff9900;
+				background-color: #ff9900;
+				border-radius: 10px;
+			}
+			.pro-history,.pro-injoyed-detail {
+				width: 100%;
+				height:50px;
+				border-bottom: 1px solid #DDDDDD;
+				line-height: 50px;
+				font-size: 14px;
+			}
+			.pro-history img,.pro-injoyed-detail img{
+				margin-left: 10px;
+				width:25px;
+			}
+			.pro-injoyed-detail span{
+				color:#999999;
+			}
+			.pro-button {
+				position: fixed;
+				bottom: 0;
+				height:58px;
+			}
+			.pro-button-join,.pro-button-shop {
+				display: inline-block;
+				float: left;
+				width: 50%;
+				height:58px;
+				line-height: 58px;
+				text-align: center;
+				font-size: 14px;
+				cursor: pointer;
+			}
+			.pro-button .pro-button-join {
+				background-color: #4db9e4;
+				color:white;
+			}
+			.pro-button .pro-button-shop{
+				background-color: white;
+				color:#4db9e4;
+			}
+			.pro-history-detail {
+				width:100%;
+				background-color: #F2F2F2;
+				font-size: 14px;
+				overflow-y: scroll;
+			}
+			.pro-history-detail::-webkit-scrollbar{
+				width:0;
+				height:0;
+			}
+			.pro-history-time,.pro-history-joined {
+				width:100%;
+				padding-left: 10px;
+			}
+			.pro-history-joined {
+				height:50px;
+			}
+			.pro-history-joined img {
+				width:40px;
+			}
+			.pro-history-joined-headimg,.pro-history-joined-detail{
+				display: inline-block;
+				float: left;
+			}
+			.pro-history-joined-detail {
+				padding-top: 6px;
+				margin-left: 10px;
+			}
+			.top-line {
+				width:20px;
+				height:10px;
+				border-right: 1px solid #4db9e4;
+			}
+			.joined-time {
+				width:86px;
+				background-color: #4db9e4;
+				color:white;
+				border-radius: 10px;
+				text-indent: 4px;
+			}
+			.color-weaken {
+				color:#999999;
+			}
+		</style>
+		<title>乐美大咖-产品</title>
+	</head>
+	<body>
+		<div class="pro-head">
+			<div class="pro-img">
+				<img class="pro-img" src="img/lm-daijin.png"/>
+				<p class="image-title">800元场地代金券</p>
+			</div>
+			<div class="clearfix">
+				<div class="slider-pro-detail">
+					<div><label>区域：</label><span>杭州</span></div>
+					<div><label>大咖：</label><span>22人</span></div>
+				</div>
+				<div class="slider-pro-detail">
+					<div><label>场地：</label><span>大新洞都</span></div>
+					<div><label>总需1000人次</label></div>	
+				</div>
+			</div>
+			<p class="pro-speed">揭晓进度100%</p>
+			<div class="progress-bar">
+				<div class="join-progress clearfix"></div>
+			</div >
+		</div>	
+		<div class="pro-body">
+			<div class="pro-history">
+				<img src="img/lm-wqjx.png" />
+				<label>往期揭晓</label>
+				<span style="float: right;margin-right: 20px;">></span>
+			</div>
+			<div class="pro-injoyed-detail">
+				<img src="img/lm-zj.png" />
+				<label>所有参与记录</label><span>（自2016-10-01  09:00:00开始） </span>
+			</div>
+			<div class="pro-history-detail">
+				<div class="pro-history-time">
+					<div class="top-line"></div>
+					<div class="joined-time">
+						2016-10-01
+					</div>
+				</div>
+				
+				<div class="pro-history-joined">
+					<div class="pro-history-joined-headimg">
+						<div class="top-line"></div>
+						<img src="img/user_header.png" />
+					</div>
+					<div class="pro-history-joined-detail">
+						<p>哈利波特<span class="color-weaken">（ip:192.168.0.1）</span></p>
+						<p>参与了12人次<span class="color-weaken">（2016-10-01  10:00:00）</span></p>
+					</div>	
+				</div>
+				
+				<div class="pro-history-joined">
+					<div class="pro-history-joined-headimg">
+						<div class="top-line"></div>
+						<img src="img/user_header.png" />
+					</div>
+					<div class="pro-history-joined-detail">
+						<p>哈利波特<span class="color-weaken">（ip:192.168.0.1）</span></p>
+						<p>参与了12人次<span class="color-weaken">（2016-10-01  10:00:00）</span></p>
+					</div>	
+				</div>
+				
+				<div class="pro-history-joined">
+					<div class="pro-history-joined-headimg">
+						<div class="top-line"></div>
+						<img src="img/user_header.png" />
+					</div>
+					<div class="pro-history-joined-detail">
+						<p>哈利波特<span class="color-weaken">（ip:192.168.0.1）</span></p>
+						<p>参与了12人次<span class="color-weaken">（2016-10-01  10:00:00）</span></p>
+					</div>	
+				</div>
+				
+				<div class="pro-history-joined">
+					<div class="pro-history-joined-headimg">
+						<div class="top-line"></div>
+						<img src="img/user_header.png" />
+					</div>
+					<div class="pro-history-joined-detail">
+						<p>哈利波特<span class="color-weaken">（ip:192.168.0.1）</span></p>
+						<p>参与了12人次<span class="color-weaken">（2016-10-01  10:00:00）</span></p>
+					</div>	
+				</div>
+				
+				<div class="pro-history-joined">
+					<div class="pro-history-joined-headimg">
+						<div class="top-line"></div>
+						<img src="img/user_header.png" />
+					</div>
+					<div class="pro-history-joined-detail">
+						<p>哈利波特<span class="color-weaken">（ip:192.168.0.1）</span></p>
+						<p>参与了12人次<span class="color-weaken">（2016-10-01  10:00:00）</span></p>
+					</div>	
+				</div>
+				
+				<div class="pro-history-joined">
+					<div class="pro-history-joined-headimg">
+						<div class="top-line"></div>
+						<img src="img/user_header.png" />
+					</div>
+					<div class="pro-history-joined-detail">
+						<p>哈利波特<span class="color-weaken">（ip:192.168.0.1）</span></p>
+						<p>参与了12人次<span class="color-weaken">（2016-10-01  10:00:00）</span></p>
+					</div>	
+				</div>
+				
+			</div>
+		</div>
+		<div class="pro-button">
+			<div class="pro-button-join">
+				立即参与
+			</div>
+			<div class="pro-button-shop">
+				加入购物车
+			</div>
+		</div>
+		<script type="text/javascript" src="js/jquery.min.js" ></script>
+		<script type="text/javascript">
+			/**
+			 * 往期回顾
+			 */
+			$(".pro-history").off("click").on("click",function(){
+				window.location.href="history.html";
+			});
+			/**
+			 * 立即参与
+			 */
+			$(".pro-button-join").off("click").on("click",function(){
+				window.location.href="goodslist.html";
+			});
+		</script>
+	</body>
+</html>

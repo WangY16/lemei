@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no" />
+		<meta content="email=no" name="format-detection" />
+		<meta name="apple-itunes-app" content="app-id=myAppStoreID, affiliate-data=myAffiliateData, app-argument=myURL" />
+		<meta name="screen-orientation" content="portrait">
+		<link rel="stylesheet" href="css/reset.css" type="text/css"/>
+		<!--<link href="http://fonts.googleapis.com/css?family=Dosis:400,500,700" rel="stylesheet" type="text/css">-->
+		<link rel="stylesheet" href="css/styles.css" />
+		<title>乐美大咖-个人主页</title>
+		<style>
+			body {
+				background-color: #F2F2F2;
+			}
+			.persion-head,.persion-body{
+				width:100%;
+				font-size: 12px;
+			}
+			.persion-head-back,.persion-detail {
+				width:100%;
+			}
+			.persion-detail {
+				margin-top: -50px;
+				text-align: center;
+			}
+			.persion-detail-name {
+				position: relative;
+				width:60%;
+				margin: -10px auto;
+				border-radius: 10px;
+			}
+			.persion-detail-name div {
+				width:100%;
+				padding: 6px 12px;
+				z-index: 99999;
+				background-color: white;
+				text-align: center;
+				border-radius: 16px;
+			}
+			.persion-body {
+				margin-top: 20px;
+			}
+			
+			.persion-body-list {
+				width:94%;
+				margin: 0 auto;
+			}
+			.persion-body-list li{
+				display: inline-block;
+				height:60px;
+				width:100%;
+				margin: 5px auto;
+				line-height: 60px;
+				background-color: white;
+				border-radius: 16px;
+			}
+			.icon {
+				float: left;
+				display: inline-block;
+				width:60px;
+				padding-top: 4px;
+				padding-left: 20px;
+				padding-rigth;15px;
+				overflow: hidden;
+				-webkit-border-radius: 3px;
+				border-radius: 3px;
+				font-size: 28px;
+			}
+			.duo-icon {
+				color: #A4D8F2;
+			}
+			.lucky-icon {
+				color: #F90400;
+			}
+			.shop-icon {
+				color: #FBD500;
+			}
+			.phone-icon {
+				color: #FFA240;
+			}
+			.home-icon {
+				color: #378eb2;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="persion-head">
+			<img class="persion-head-back" src="img/lemei-top.jpg" />
+			<div class="persion-detail">
+				<img src="img/user_header.png" />
+				<div class="persion-detail-name">
+					<div>足球小子</div>
+				</div>
+			</div>
+		</div>
+		<div class="persion-body">
+			<ul class="persion-body-list">
+				<li>
+					<div class="duo-icon icon" data-icon='&#xe00a'></div><span>夺宝记录</span>
+				</li>
+				<li>
+					<div class="lucky-icon icon" data-icon='P'></div><span>幸运记录</span>
+				</li>
+				<li>
+					<div class="shop-icon icon" data-icon='f'></div><span>购物车</span>
+				</li>
+				<li>
+					<div class="phone-icon icon" data-icon='+'></div><span>手机验证</span>
+				</li>
+				<li>
+					<div class="home-icon icon" data-icon='O'></div><span>营业厅客服</span>
+				</li>
+			</ul>
+		</div>	
+	</body>
+</html>
