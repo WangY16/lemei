@@ -160,6 +160,13 @@
 					$("#secondDate").text(speed);
 				}
 			}
+			
+			/*
+			 * 确认支付
+			 */
+			$(".goods-btn-ok").off("click").on("click",function(){
+				window.location.href="paySuccess.html";
+			});
 		</script>
 	</body>
 </html>

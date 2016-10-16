@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no" />
+		<meta content="email=no" name="format-detection" />
+		<meta name="apple-itunes-app" content="app-id=myAppStoreID, affiliate-data=myAffiliateData, app-argument=myURL" />
+		<meta name="screen-orientation" content="portrait">
+		<link rel="stylesheet" href="../css/reset.css" type="text/css"/>
+		<link rel="stylesheet" href="../css/styles.css" />
+		<link rel="stylesheet" href="../css/lCalendar.css" />
+		<title>管理员-主页</title>
+		<style>
+			body {
+				background-color: #F2F2F2;;
+			}
+			.none {
+				display: none;
+			}
+			.content-head{
+				width: 100%;
+				background-color: white;
+			}
+			.tab-list {
+				display:-webkit-box;
+			    display: -moz-box;
+			    display: -ms-flexbox;
+			    display: -webkit-flex;
+			    display: flex;
+			}
+			.tab-list li{
+				box-flex:3;
+				-webkit-box-flex:4;
+				-moz-box-flex:4;
+				flex:4;
+				-webkit-flex:4;
+				height:40px;
+				line-height: 40px;
+				text-align: center;
+				border-bottom: 2px solid white;
+				font-size: 12px;
+			}
+			.tab-list li.li-selected {
+				border-bottom: 2px solid #3399cc;
+				color: #3399cc;
+			}
+			.content-center-title {
+				width:100%;
+				height:35px;
+				background-color: white;
+				padding-left: 14px;;
+			}
+			.content-center-title div{
+				float: left;
+				display: inline-block;	
+				line-height: 35px;
+			}	
+			.icon {
+				color: #A4D8F2;
+				overflow: hidden;
+				-webkit-border-radius: 3px;
+				border-radius: 3px;
+				font-size: 20px;
+			}
+			.content-body {
+				width:100%;
+			}
+			.pro-list {
+				width:94%;
+				height:90px;
+				margin: 0 auto;
+				margin-top: 10px;
+				background-color: white;
+				border-radius: 10px;
+			}
+			.pro-list-left,.pro-list-right {
+				float: left;
+				display: inline-block;
+			}
+			.pro-list-left {
+				width:20%;
+				height:90px;
+				background-color: #A5DCF1;
+				border-bottom-left-radius: 10px;
+				border-top-left-radius: 10px;
+			}
+			.pro-list-right {
+				width:80%;
+				height:90px;
+				line-height: 90px;
+			}
+			.pro-icon {
+				color: white;
+				overflow: hidden;
+				-webkit-border-radius: 3px;
+				border-radius: 3px;
+				font-size: 50px;
+				padding-top: 14px;
+				padding-left: 4px;
+			}
+			.pro-number {
+				padding-left: 10px;
+				font-size: 20px;
+				color:#FF6600
+			}
+			.pro-detail {
+				padding: 6px 8px;
+				margin-left: 10px;
+				border: 1px solid #6CC5E3;
+				color:#6CC5E3;
+			}
+			
+			/*我的商品*/
+			.persion-head{
+				width:100%;
+				font-size: 12px;
+				background-color: #4EB9E5;
+			}
+			.persion-head-back,.persion-detail {
+				width:100%;
+			}
+			.persion-detail {
+				text-align: center;
+				padding-top: 20px;
+				padding-bottom: 20px;
+			}
+			.persion-detail img {
+				
+			}
+			.persion-detail-image {
+				width:88px;
+				height:88px;
+				border-radius: 44px;
+				margin: 0 auto;
+				box-shadow: 0 0 14px 6px #6DDAF2;
+			} 
+			.persion-detail-name {
+				position: relative;
+				width:60%;
+				margin: -10px auto;
+				border-radius: 10px;
+			}
+			.persion-detail-name div {
+				width:100%;
+				padding: 6px 12px;
+				z-index: 99999;
+				background-color: white;
+				text-align: center;
+				border-radius: 16px;
+			}
+			.tpl1 .pro-list {
+				height:auto;
+			}
+			.tpl1 .pro-list-head {
+				height:60px;
+				line-height:60px;
+				border-bottom: 1px dashed #E3E3E3;
+				text-align: center;
+			}
+			.tpl1 .pro-list-body {
+				height:40px;
+				line-height: 40px;
+				text-align: center;
+			}
+			.tpl1 .pro-list-body-btn{
+				height:28px;
+				line-height: 28px;
+				padding: 0 10px;
+				display: inline-block;
+				background-color: #4EB9E5;
+				color:white;
+				margin-left: 10px;
+			}
+			.tpl1 .pro-list-body .garbage-icon {
+				color: #A4D8F2;
+				overflow: hidden;
+				-webkit-border-radius: 3px;
+				border-radius: 3px;
+				font-size: 22px;
+    			vertical-align: -webkit-baseline-middle;
+    			padding-left: 20px;
+			}
+			.tpl1 .content-foot {
+				width:100%;
+				height:210px;
+				margin-top: 10px;
+				background-color: white;
+				text-align: center;
+			}
+			.tpl1 .content-foot p {
+				padding: 6px 0;	
+				font-size: 14px;
+			}
+			.tpl1 .content-foot img {
+				width:120px;
+				margin-bottom: 16px;	
+			}
+			
+			/*已兑换商品*/
+			.search-time{
+				width:100%;
+				height:40px;	
+				line-height: 40px;
+			}
+			.search-time input {
+				width:100%;
+				height:40px;
+				border: none;
+				border-bottom: 1px solid #F2F2F2;
+			}
+			.search-time-btn {
+				width: 100%;
+				padding-bottom: 10px;
+				border-bottom: 1px solid #F2F2F2;
+			}
+			.search-time-btn .time-btn {
+				width:60%;
+				height:30px;
+				line-height: 30px;
+				border-radius: 10px;
+				background-color: #4EB9E5;
+				color: white;
+				text-align: center;
+				margin:10px auto;
+			}
+			.search-time-detail .fc {
+				color: #FF6600;
+			}
+			.lucky-list-zhong{
+			   background-image:url(../img/zhongjiang.png);
+			   background-position: right top;
+			   background-size: 20%;
+			   background-repeat: no-repeat; 
+			}
+			.pro-list-detail {
+				width: 88%;
+				height:60px;
+    			color: #7BC9E5;
+   				background-color: white;
+    			margin: 0 auto;
+			}
+			.pro-list-detail p {
+				line-height: 30px;
+			}
+			.pro-list-detail p label {
+				padding-left: 20px;
+				width: 60px;
+				text-align: right;
+			}
+			.pro-list-detail-l,.pro-list-detail-r {
+				width:50%;
+				float: left;
+				display: inline-block;
+			}
+			.detail-btn-click {
+				background-color: #A5DCF1;
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="content-head">
+			<ul class="tab-list">
+				<li class="li-selected">确认兑换</li>
+				<li>我的商品</li>
+				<li>已兑换商品</li>
+				<li>未兑换商品</li>
+			</ul>
+		</div>
+		
+		<div class="content-body">
+			<div class="tpl0 none">
+				<div class="content-center-title">
+					<div class="icon" data-icon="k"></div>
+					<div>确认兑奖的商品列表</div>
+				</div>
+				<div class="content-body"> 
+					<!--
+		            	作者：759804722@qq.com
+		            	时间：2016-10-12
+		            	描述：每个产品信息
+		           -->
+					<div class="pro-list">
+						<div class="pro-list-left">
+							<div class="pro-icon" data-icon="&#xe003;"></div>
+						</div>
+						<div class="pro-list-right">
+							<p><span class="pro-number">100</span>元场地代金券<span class="pro-detail">详细信息</span></p>
+						</div>
+					</div>
+				
+					<div class="pro-list">
+						<div class="pro-list-left">
+							<div class="pro-icon" data-icon="&#xe003;"></div>
+						</div>
+						<div class="pro-list-right">
+							<p><span class="pro-number">200</span>元场地代金券<span class="pro-detail">详细信息</span></p>
+						</div>
+					</div>
+					
+					<div class="pro-list">
+						<div class="pro-list-left">
+							<div class="pro-icon" data-icon="&#xe003;"></div>
+						</div>
+						<div class="pro-list-right">
+							<p><span class="pro-number">300</span>元场地代金券<span class="pro-detail">详细信息</span></p>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			<div class="tpl1 none">
+				<div class="persion-head">
+					<div class="persion-detail">
+						<div class="persion-detail-image">
+							<img src="../img/user_header.png" />
+						</div>
+						<div class="persion-detail-name">
+							<div>足球小子</div>
+						</div>
+					</div>
+				</div>
+				<div class="content-center-title">
+					<div class="icon" data-icon="k"></div>
+					<div>已创建专属商品</div>
+				</div>
+				<div class="content-body">
+					<!--
+                    	作者：759804722@qq.com
+                    	时间：2016-10-13
+                    	描述：我的商品专属
+                    -->
+					<div class="pro-list">
+						<div class="pro-list-head">
+							<p><span class="pro-number">200</span>元场地代金券<span class="pro-detail">详细信息</span></p>
+						</div>
+						<div class="pro-list-body">
+							<p><a class="pro-list-body-btn">查看最新一期</a><a class="pro-list-body-btn">分享商品</a><span class="garbage-icon" data-icon="&#xe009"></span></p>
+						</div>
+					</div>
+					
+					<div class="pro-list">
+						<div class="pro-list-head">
+							<p><span class="pro-number">200</span>元场地代金券<span class="pro-detail">详细信息</span></p>
+						</div>
+						<div class="pro-list-body">
+							<p><a class="pro-list-body-btn">查看最新一期</a><a class="pro-list-body-btn">分享商品</a><span class="garbage-icon" data-icon="&#xe009"></span></p>
+						</div>
+					</div>
+					
+				</div>	
+				<div class="content-foot">
+					<p>你所有商品的二维码</p>
+					<img src="../img/baidu.png" />
+					<div>
+						<a class="pro-list-body-btn">新增商品</a><a class="pro-list-body-btn">分享所有</a>
+					</div>
+				</div>	
+			</div>
+			<div class="tpl2">
+				<div class="content-head">
+					<div class="search-time">
+						<input id="startTime" type="text" readonly="" name="input_date" placeholder="开始日期"  />
+					</div>
+					<div class="search-time">
+						<input id="endTime" type="text" readonly="" name="input_date" placeholder="结束日期"  />
+					</div>	
+					<div class="search-time-btn">
+						<div class="time-btn">搜索</div>
+					</div>
+					<div class="search-time-detail">
+						未兑换商品<span class="fc">30</span>件,商品总价<span class="fc">30000</span>元，预计收入<span class="fc">30000</span>元
+					</div>
+				</div>
+				<div class="content-body">
+					
+					<div class="pro-list ">
+						<div class="pro-list-left">
+							<div class="pro-icon" data-icon="&#xe003;"></div>
+						</div>
+						<div class="pro-list-right lucky-list-zhong">
+							<p><span class="pro-number">100</span>元场地代金券<span class="pro-detail">详细信息</span></p>
+						</div>
+					</div>
+					
+					<div class="pro-list">
+						<div class="pro-list-left">
+							<div class="pro-icon" data-icon="&#xe003;"></div>
+						</div>
+						<div class="pro-list-right">
+							<p><span class="pro-number">100</span>元场地代金券<span class="pro-detail">详细信息</span></p>
+						</div>
+					</div>
+					
+					<div class="pro-list">
+						<div class="pro-list-left">
+							<div class="pro-icon" data-icon="&#xe003;"></div>
+						</div>
+						<div class="pro-list-right">
+							<p><span class="pro-number">100</span>元场地代金券<span class="pro-detail">详细信息</span></p>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			<div class="tpl3 none">
+				<div class="content-head">
+					<div class="search-time">
+						<input id="startTime" type="text" readonly="" name="input_date" placeholder="开始日期"  />
+					</div>
+					<div class="search-time">
+						<input id="endTime" type="text" readonly="" name="input_date" placeholder="结束日期"  />
+					</div>	
+					<div class="search-time-btn">
+						<div class="time-btn">搜索</div>
+					</div>
+					<div class="search-time-detail">
+						未兑换商品<span class="fc">30</span>件,商品总价<span class="fc">30000</span>元，预计收入<span class="fc">30000</span>元
+					</div>
+				</div>
+				<div class="content-body">
+					
+					<div class="pro-list ">
+						<div class="pro-list-left">
+							<div class="pro-icon" data-icon="&#xe003;"></div>
+						</div>
+						<div class="pro-list-right lucky-list-zhong">
+							<p><span class="pro-number">100</span>元场地代金券<span class="pro-detail detail-btn-click">详细信息</span></p>
+						</div>
+					
+					</div>
+					<div class="pro-list-detail clearfix">
+						<div class="pro-list-detail-l">
+							<p><label>区域：</label><span>杭州</span></p>
+							<p><label>总需：</label><span>22人次</span></p>
+						</div>
+						<div class="pro-list-detail-r">
+							<p><label>场地：</label><span>新大东都</span></p>
+							<p><label>中奖人：</label><span>足球小子</span></p>
+						</div>
+					</div>
+					
+					<div class="pro-list">
+						<div class="pro-list-left">
+							<div class="pro-icon" data-icon="&#xe003;"></div>
+						</div>
+						<div class="pro-list-right">
+							<p><span class="pro-number">100</span>元场地代金券<span class="pro-detail">详细信息</span></p>
+						</div>
+					</div>
+					
+					<div class="pro-list">
+						<div class="pro-list-left">
+							<div class="pro-icon" data-icon="&#xe003;"></div>
+						</div>
+						<div class="pro-list-right">
+							<p><span class="pro-number">100</span>元场地代金券<span class="pro-detail">详细信息</span></p>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>	
+		
+		
+
+		<script type="text/javascript" src="../js/jquery.min.js" ></script>
+		<script type="text/javascript" src="../js/lCalendar.min.js" ></script>
+		<script>
+			$(".tab-list li").off("click").on("click",function(){
+				$(this).addClass("li-selected").siblings().removeClass("li-selected");
+				var index = $(this).index();
+				var $thiz = $(".tpl"+index);
+				$thiz.removeClass("none").siblings().addClass("none");
+			});
+			/*开始时间初始化*/
+			var start = new lCalendar();
+		    start.init({
+		        'trigger': '#startTime',
+		        'type': 'date'
+		    });
+		    
+			var end = new lCalendar();
+		    end.init({
+		        'trigger': '#endTime',
+		        'type': 'date'
+		    });
+		</script>
+	</body>
+</html>

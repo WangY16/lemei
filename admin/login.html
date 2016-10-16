@@ -9,10 +9,145 @@
 		<meta content="email=no" name="format-detection" />
 		<meta name="apple-itunes-app" content="app-id=myAppStoreID, affiliate-data=myAffiliateData, app-argument=myURL" />
 		<meta name="screen-orientation" content="portrait">
-		<link rel="stylesheet" href="css/reset.css" type="text/css"/>
-		<link rel="stylesheet" href="css/reset.css" type="text/css"/>
-		<title>登录</title>
+		<link rel="stylesheet" href="../css/reset.css" type="text/css"/>
+		<link rel="stylesheet" href="../css/styles.css" type="text/css"/>
+		<link rel="stylesheet" href="../css/sweetalert.css" />
+		<title>乐美大咖-管理员登录</title>
+		<style>
+			.content {
+				width:100%;
+				height:100%;
+				background-image: url(../img/appbg.jpg);
+				background-size: 100%;
+				background-repeat: no-repeat;
+			}
+			.content-head {
+				text-align: center;
+			}
+			.content-head img{
+				width:50%;
+				margin: 40px 0;
+			}
+			
+			.content-body-input {
+				width:100%;
+				height:40px;
+				text-align: center;
+			}
+			.content-body-input input{
+				display: inline-block;
+				width:300px;
+				height:35px;
+				background:none;
+				outline: none;
+				border:none;
+				color: white;
+				border-bottom: 1px solid white;
+				text-indent: 35px;
+				font-size: 14px;
+			}
+			input[placeholder], [placeholder], *[placeholder] { 
+				color:white ; 
+			}
+			.icon {
+				display: inline-block;
+				width:35px;
+				height:35px;
+				overflow: hidden;
+				-webkit-border-radius: 3px;
+				border-radius: 3px;
+				font-size: 28px;
+				color: white;
+				vertical-align: middle;
+				margin-right: -35px;
+			}
+			.content-foot {
+				margin-top: 110px;
+				text-align: center;
+				margin-bottom: 63px;
+			}
+			.content-foot-login,.content-foot-forget{
+				width:184px;
+				height:40px;
+				margin: 10px auto;
+				border:1px solid white ;
+				border-radius: 40px;
+				line-height: 40px;
+				font-size: 14px;;
+				text-align: center;
+			}	
+			.content-foot-login  {
+				background-color: white;
+				color:#9DCDE5;
+			}
+			.content-foot-forget {
+				color:white;
+			}
+			.fail-tips {
+				/*display:none;*/
+			  	width:300px;
+			 	height:36px;
+			  	border-radius:4px;
+			  	text-align:center;
+			  	background:#fcd2d2;
+			  	margin:0 auto;
+			  	line-height:36px;
+			  	color:red;
+			    /*opacity:0.8;*/
+			}
+			.success-tips {
+				background: #55E124;
+				color:white;
+			}
+		</style>
 	</head>
 	<body>
+		<div class="content">
+			<div class="content-head">
+				<img src="../img/lemei-title.png" />
+			</div>
+			<div class="content-body">
+				<!--<div id="tipsRemind" class="fail-tips">用户名不能空！</div>-->
+				<div class="content-body-input">
+					<div class="icon" data-icon="&#xe00e"></div>
+					<input type="text" id="loginName" placeholder="请输入用户名" />
+				</div>
+				<div class="content-body-input">
+					<div class="icon" data-icon="9"></div>
+					<input type="password" id="loginPassword" placeholder="请输入密码"/>
+				</div>
+				
+			</div>
+			<div class="content-foot">
+				<div class="content-foot-login">
+					登录
+				</div>
+				<div class="content-foot-forget">
+					忘记密码
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="../js/jquery.min.js" ></script>
+		<script type="text/javascript" src="../js/sweetalert.min.js" ></script>
+		<script type="text/javascript" src="../js/sweetalert-dev.js"> </script>
+		<script>
+			$(function(){
+				/**
+				 * 登录校验
+				 */
+				$(".content-foot-login").off("click").on("click",function(){
+					var loginName = $("#loginName").val();
+					var loginPassword = $("#loginPassword").val();
+					if (loginName == "") {
+						swal("用户名不能为空!", "", "error");
+						return;
+					}
+					if (loginPassword == "") {
+						swal("密码不能为空!", "", "error");
+						return;
+					}
+				});
+			});
+		</script>
 	</body>
 </html>
